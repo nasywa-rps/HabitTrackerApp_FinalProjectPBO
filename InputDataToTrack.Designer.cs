@@ -50,6 +50,7 @@
             this.btnSignUp.TabIndex = 29;
             this.btnSignUp.Text = "Input";
             this.btnSignUp.UseVisualStyleBackColor = false;
+            this.btnSignUp.Click += new System.EventHandler(this.btnSignUp_Click);
             // 
             // optGender
             // 

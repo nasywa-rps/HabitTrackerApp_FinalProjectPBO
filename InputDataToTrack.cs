@@ -46,5 +46,11 @@ namespace TestForm
         {
 
         }
+
+        private void btnSignUp_Click(object sender, EventArgs e)
+        {
+            DisplayTracker Check = new DisplayTracker();
+            Check.Show();
+        }
     }
 }
