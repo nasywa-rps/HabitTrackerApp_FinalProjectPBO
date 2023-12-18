@@ -51,5 +51,10 @@ namespace TestForm
                 Check.Show();
             }
         }
+
+        private void txtUsername_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

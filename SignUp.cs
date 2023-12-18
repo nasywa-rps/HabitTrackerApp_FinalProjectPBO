@@ -91,7 +91,6 @@ namespace TestForm
             {
                 connection.Open();
 
-                //string query = "INSERT INTO Users (username, password, role) VALUES (@username, @password, @role)";
                 string query = "INSERT INTO public.\"Profile\"(\r\n\t\"Email\", \"Gender\", \"Username\", \"Password\", \"FullName\") VALUES (@Email, @Gender, @Username, @Password, @FullName)";
 
                 using (NpgsqlCommand cmd = new NpgsqlCommand(query, connection))

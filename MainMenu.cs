@@ -28,5 +28,17 @@ namespace TestForm
             InputDataToTrack Check = new InputDataToTrack();
             Check.Show();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            DisplayTracker Check = new DisplayTracker();
+            Check.Show();
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            AddHabit Check = new AddHabit();
+            Check.Show();
+        }
     }
 }

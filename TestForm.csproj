@@ -107,6 +107,12 @@
     <Compile Include="FirstPage.Designer.cs">
       <DependentUpon>FirstPage.cs</DependentUpon>
     </Compile>
+    <Compile Include="AddHabit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddHabit.Designer.cs">
+      <DependentUpon>AddHabit.cs</DependentUpon>
+    </Compile>
     <Compile Include="InputDataToTrack.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -133,6 +139,9 @@
     <Compile Include="SignUp.Designer.cs">
       <DependentUpon>SignUp.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AddHabit.resx">
+      <DependentUpon>AddHabit.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DisplayTracker.resx">
       <DependentUpon>DisplayTracker.cs</DependentUpon>
     </EmbeddedResource>

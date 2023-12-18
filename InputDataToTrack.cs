@@ -7,11 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Npgsql;
 
 namespace TestForm
 {
     public partial class InputDataToTrack : Form
     {
+        private const string connectionString = "Host=localhost;Port=5432;Username=postgres;Password=nasywa;Database=TestHabitTracker";
         public InputDataToTrack()
         {
             InitializeComponent();
@@ -52,5 +54,29 @@ namespace TestForm
             DisplayTracker Check = new DisplayTracker();
             Check.Show();
         }
+        /*
+        private void UpdateHabit(string activity, int update, DateTime date)
+        {
+            using (NpgsqlConnection connection = new NpgsqlConnection(connectionString))
+            {
+                connection.Open();
+
+                string queryReturn = "RETURNING public.\"Habit\"(\"TotalProgress\") AS latestProgress";
+
+                int total = total + update;
+
+                string queryInsert = "INSERT INTO public.\"Habit\"(\r\n\t\"Name\", \"Progress\", \"TotalProgress\", \"Date\") VALUES (@Name, @Progress, @TotalProgress, @Date)";
+
+                using (NpgsqlCommand cmd = new NpgsqlCommand(queryInsert, connection))
+                {
+                    cmd.Parameters.AddWithValue("@Name", activity);
+                    cmd.Parameters.AddWithValue("@Progress", update);
+                    cmd.Parameters.AddWithValue("@TotalProgress", total);
+                    cmd.Parameters.AddWithValue("@Date", date);
+
+                    cmd.ExecuteNonQuery();
+                }
+            }
+        }*/
     }
 }
