@@ -26,12 +26,14 @@ namespace TestForm
         {
             SignUp Check = new SignUp();
             Check.Show();
+            this.Hide();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             LogIn Check = new LogIn();
             Check.Show();
+            this.Hide();
         }
     }
 }

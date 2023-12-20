@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnSignUp = new System.Windows.Forms.Button();
+            this.btnSubmit = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -38,65 +38,64 @@
             this.txtTarget = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
-            // btnSignUp
+            // btnSubmit
             // 
-            this.btnSignUp.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnSignUp.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSignUp.Location = new System.Drawing.Point(447, 305);
-            this.btnSignUp.Name = "btnSignUp";
-            this.btnSignUp.Size = new System.Drawing.Size(138, 39);
-            this.btnSignUp.TabIndex = 38;
-            this.btnSignUp.Text = "Submit";
-            this.btnSignUp.UseVisualStyleBackColor = false;
-            this.btnSignUp.Click += new System.EventHandler(this.btnSignUp_Click);
+            this.btnSubmit.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnSubmit.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSubmit.Location = new System.Drawing.Point(298, 198);
+            this.btnSubmit.Margin = new System.Windows.Forms.Padding(2);
+            this.btnSubmit.Name = "btnSubmit";
+            this.btnSubmit.Size = new System.Drawing.Size(92, 25);
+            this.btnSubmit.TabIndex = 38;
+            this.btnSubmit.Text = "Submit";
+            this.btnSubmit.UseVisualStyleBackColor = false;
+            this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Arial", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(45, 110);
-            this.label6.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
+            this.label6.Location = new System.Drawing.Point(30, 72);
+            this.label6.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(115, 33);
+            this.label6.Size = new System.Drawing.Size(78, 22);
             this.label6.TabIndex = 36;
             this.label6.Text = "Activity";
-            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Arial", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(45, 177);
-            this.label5.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
+            this.label5.Location = new System.Drawing.Point(30, 115);
+            this.label5.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(69, 33);
+            this.label5.Size = new System.Drawing.Size(46, 22);
             this.label5.TabIndex = 33;
             this.label5.Text = "Unit";
-            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(92, 30);
-            this.label1.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
+            this.label1.Location = new System.Drawing.Point(61, 20);
+            this.label1.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(622, 46);
+            this.label1.Size = new System.Drawing.Size(436, 32);
             this.label1.TabIndex = 32;
             this.label1.Text = "What Habit Do You Want To Do?";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // txtHabit
             // 
             this.txtHabit.Font = new System.Drawing.Font("Arial", 14F, System.Drawing.FontStyle.Bold);
-            this.txtHabit.Location = new System.Drawing.Point(208, 107);
+            this.txtHabit.Location = new System.Drawing.Point(139, 70);
+            this.txtHabit.Margin = new System.Windows.Forms.Padding(2);
             this.txtHabit.Name = "txtHabit";
-            this.txtHabit.Size = new System.Drawing.Size(377, 40);
+            this.txtHabit.Size = new System.Drawing.Size(253, 29);
             this.txtHabit.TabIndex = 35;
-            this.txtHabit.TextChanged += new System.EventHandler(this.txtUsername_TextChanged);
             // 
             // optUnit
             // 
+            this.optUnit.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.optUnit.Font = new System.Drawing.Font("Arial", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.optUnit.FormattingEnabled = true;
             this.optUnit.Items.AddRange(new object[] {
@@ -104,44 +103,46 @@
             "Laps",
             "Times",
             "Add a new unit"});
-            this.optUnit.Location = new System.Drawing.Point(208, 174);
+            this.optUnit.Location = new System.Drawing.Point(139, 113);
+            this.optUnit.Margin = new System.Windows.Forms.Padding(2);
             this.optUnit.Name = "optUnit";
-            this.optUnit.Size = new System.Drawing.Size(377, 40);
+            this.optUnit.Size = new System.Drawing.Size(253, 30);
             this.optUnit.TabIndex = 37;
-            this.optUnit.SelectedIndexChanged += new System.EventHandler(this.optGender_SelectedIndexChanged);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Arial", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(45, 250);
-            this.label2.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
+            this.label2.Location = new System.Drawing.Point(30, 162);
+            this.label2.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(100, 33);
+            this.label2.Size = new System.Drawing.Size(70, 22);
             this.label2.TabIndex = 40;
             this.label2.Text = "Target";
             // 
             // txtTarget
             // 
             this.txtTarget.Font = new System.Drawing.Font("Arial", 14F, System.Drawing.FontStyle.Bold);
-            this.txtTarget.Location = new System.Drawing.Point(208, 247);
+            this.txtTarget.Location = new System.Drawing.Point(139, 161);
+            this.txtTarget.Margin = new System.Windows.Forms.Padding(2);
             this.txtTarget.Name = "txtTarget";
-            this.txtTarget.Size = new System.Drawing.Size(377, 40);
+            this.txtTarget.Size = new System.Drawing.Size(253, 29);
             this.txtTarget.TabIndex = 39;
             // 
             // AddHabit
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(533, 292);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtTarget);
-            this.Controls.Add(this.btnSignUp);
+            this.Controls.Add(this.btnSubmit);
             this.Controls.Add(this.optUnit);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.txtHabit);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label1);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "AddHabit";
             this.Text = "Form1";
             this.ResumeLayout(false);
@@ -150,7 +151,7 @@
         }
 
         #endregion
-        private System.Windows.Forms.Button btnSignUp;
+        private System.Windows.Forms.Button btnSubmit;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label1;

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Text;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,18 +15,20 @@ namespace TestForm
 {
     public partial class AddHabit : Form
     {
-        private const string connectionString = "Host=localhost;Port=5432;Username=postgres;Password=nasywa;Database=TestHabitTracker";
-        public AddHabit()
+        private const string connectionString = "Host=localhost;Port=5432;Username=postgres;Password=nasywa;Database=HabitTracker";
+        private int loggedInUserId;
+        public AddHabit(int userId)
         {
             InitializeComponent();
+            loggedInUserId = userId;
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private int GetLoggedInUserId()
         {
-
+            return loggedInUserId;
         }
 
-        private void btnSignUp_Click(object sender, EventArgs e)
+        private void btnSubmit_Click(object sender, EventArgs e)
         {
             string activity = txtHabit.Text;
             string unit = optUnit.Text;
@@ -36,40 +39,13 @@ namespace TestForm
                 !string.IsNullOrEmpty(txtTarget.Text))
             {
                 SaveNewHabit(activity, unit, target);
-
-                MainMenu Check = new MainMenu();
-                Check.Show();
+                MessageBox.Show("Aktivitas berhasil ditambahkan!");
+                this.Close();
             }
-        }
-
-        private void optGender_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label6_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtUsername_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
-        {
-
+            else 
+            {
+                MessageBox.Show("Masukkan semua data dengan benar!");
+            }
         }
 
         private void SaveNewHabit(string activity, string unit, int target)
@@ -77,14 +53,17 @@ namespace TestForm
             using (NpgsqlConnection connection = new NpgsqlConnection(connectionString))
             {
                 connection.Open();
+                int userId = GetLoggedInUserId();
 
-                string query = "INSERT INTO public.\"Habit\"(\r\n\t\"Name\", \"Unit\", \"Target\") VALUES (@Name, @Unit, @Target)";
+                //string query = "INSERT INTO public.\"Habit\"(\r\n\t\"Name\", \"Unit\", \"Target\") VALUES (@Name, @Unit, @Target)";
+                string query = "INSERT INTO habits (id_users, activity_name, unit, target) VALUES (@userId, @activity, @unit, @target)";
 
                 using (NpgsqlCommand cmd = new NpgsqlCommand(query, connection))
                 {
-                    cmd.Parameters.AddWithValue("@Name", activity);
-                    cmd.Parameters.AddWithValue("@Unit", unit);
-                    cmd.Parameters.AddWithValue("@Target", target);
+                    cmd.Parameters.AddWithValue("@userId", userId);
+                    cmd.Parameters.AddWithValue("@activity", activity);
+                    cmd.Parameters.AddWithValue("@unit", unit);
+                    cmd.Parameters.AddWithValue("@target", target);
 
                     cmd.ExecuteNonQuery();
                 }

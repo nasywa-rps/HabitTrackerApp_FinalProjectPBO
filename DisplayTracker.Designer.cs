@@ -28,19 +28,36 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.dgvProgress = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProgress)).BeginInit();
             this.SuspendLayout();
+            // 
+            // dgvProgress
+            // 
+            this.dgvProgress.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvProgress.Location = new System.Drawing.Point(18, 18);
+            this.dgvProgress.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.dgvProgress.Name = "dgvProgress";
+            this.dgvProgress.RowHeadersWidth = 62;
+            this.dgvProgress.Size = new System.Drawing.Size(764, 412);
+            this.dgvProgress.TabIndex = 0;
+            this.dgvProgress.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProgress_CellContentClick);
             // 
             // DisplayTracker
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(800, 449);
+            this.Controls.Add(this.dgvProgress);
             this.Name = "DisplayTracker";
             this.Text = "DisplayTracker";
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProgress)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
+
+        private System.Windows.Forms.DataGridView dgvProgress;
     }
 }

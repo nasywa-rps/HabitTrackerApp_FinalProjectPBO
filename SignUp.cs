@@ -15,55 +15,11 @@ namespace TestForm
 {
     public partial class SignUp : Form
     {
-        private const string connectionString = "Host=localhost;Port=5432;Username=postgres;Password=nasywa;Database=TestHabitTracker";
+        // ini nanti ganti jadi tempatmu lagi ya!
+        private const string connectionString = "Host=localhost;Port=5432;Username=postgres;Password=nasywa;Database=HabitTracker"; 
         public SignUp()
         {
             InitializeComponent();
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox2_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label6_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void richTextBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtUsername_TextChanged(object sender, EventArgs e)
-        {
-
         }
 
         private void btnSignUp_Click(object sender, EventArgs e)
@@ -81,8 +37,13 @@ namespace TestForm
             {
                 SaveSignUpInfo(userName, userEmail, userGender, userUname, userPass);
 
-                MainMenu Check = new MainMenu();
+                FirstPage Check = new FirstPage();
                 Check.Show();
+                this.Hide();
+            }
+            else
+            {
+                MessageBox.Show("masukkan credential akun yang dibutuhkan!");
             }
         }
         private void SaveSignUpInfo(string userName, string userEmail, string userGender, string userUname, string userPass)
@@ -91,39 +52,20 @@ namespace TestForm
             {
                 connection.Open();
 
-                string query = "INSERT INTO public.\"Profile\"(\r\n\t\"Email\", \"Gender\", \"Username\", \"Password\", \"FullName\") VALUES (@Email, @Gender, @Username, @Password, @FullName)";
+                //ini nama-nama instancenya versi DB-ku
+                string query = "INSERT INTO users (fullname, email, gender, username, pass) VALUES (@userName, @userEmail, @userGender, @userUname, @userPass)";
 
                 using (NpgsqlCommand cmd = new NpgsqlCommand(query, connection))
                 {
-                    cmd.Parameters.AddWithValue("@Email", userEmail);
-                    cmd.Parameters.AddWithValue("@Gender", userGender);
-                    cmd.Parameters.AddWithValue("@Username", userUname);
-                    cmd.Parameters.AddWithValue("@Password", userPass);
-                    cmd.Parameters.AddWithValue("@FullName", userName);
+                    cmd.Parameters.AddWithValue("@userName", userName);
+                    cmd.Parameters.AddWithValue("@userEmail", userEmail);
+                    cmd.Parameters.AddWithValue("@userGender", userGender);
+                    cmd.Parameters.AddWithValue("@userUname", userUname);
+                    cmd.Parameters.AddWithValue("userPass", userPass);
 
                     cmd.ExecuteNonQuery();
                 }
             }
-        }
-
-        private void optGender_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtPassword_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label5_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }
