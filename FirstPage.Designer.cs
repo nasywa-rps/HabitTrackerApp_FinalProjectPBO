@@ -35,10 +35,9 @@
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(513, 245);
-            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button1.Location = new System.Drawing.Point(770, 377);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(129, 33);
+            this.button1.Size = new System.Drawing.Size(194, 51);
             this.button1.TabIndex = 7;
             this.button1.Text = "Sign Up";
             this.button1.UseVisualStyleBackColor = true;
@@ -48,10 +47,9 @@
             // 
             this.button2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.button2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(673, 245);
-            this.button2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button2.Location = new System.Drawing.Point(1010, 377);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(129, 33);
+            this.button2.Size = new System.Drawing.Size(194, 51);
             this.button2.TabIndex = 8;
             this.button2.Text = "Log In";
             this.button2.UseVisualStyleBackColor = true;
@@ -59,16 +57,16 @@
             // 
             // FirstPage
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::TestForm.Properties.Resources.firstPageBG;
+            this.BackgroundImage = global::TestForm.Properties.Resources.firstPageBG1;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1265, 666);
+            this.ClientSize = new System.Drawing.Size(1898, 1024);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "FirstPage";
             this.Text = "FirstPage";
+            this.Load += new System.EventHandler(this.FirstPage_Load);
             this.ResumeLayout(false);
 
         }

@@ -42,10 +42,10 @@ namespace TestForm
                                 string email = reader["email"].ToString();
                                 string gender = reader["gender"].ToString();
 
-                                lblUsername.Text = $"Username: {username}";
-                                lblFullname.Text = $"Fullname: {fullname}";
-                                lblEmail.Text = $"Email: {email}";
-                                lblGender.Text = $"Gender: {gender}";
+                                lblUsername.Text = $"{username}";
+                                lblFullname.Text = $"{fullname}";
+                                lblEmail.Text = $"{email}";
+                                lblGender.Text = $"{gender}";
                             }
                             else
                             {
@@ -92,6 +92,26 @@ namespace TestForm
             FirstPage Check = new FirstPage();
             Check.Show();
             this.Close();
+        }
+
+        private void lblUsername_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblEmail_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblFullname_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblGender_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

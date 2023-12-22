@@ -35,5 +35,10 @@ namespace TestForm
             Check.Show();
             this.Hide();
         }
+
+        private void FirstPage_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
