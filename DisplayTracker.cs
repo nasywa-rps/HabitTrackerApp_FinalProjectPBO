@@ -44,7 +44,7 @@ namespace TestForm
 
                             // Mengaitkan DataTable dengan DataGridView
                             dgvProgress.DataSource = dataTable;
-
+                            /*
                             // Tambahkan kolom Progress pada bagian paling kanan
                             DataGridViewTextBoxColumn progressColumn = new DataGridViewTextBoxColumn();
                             progressColumn.Name = "progressColumn";
@@ -67,9 +67,10 @@ namespace TestForm
                                 // Hitung nilai progress dalam persentase
                                 int progressValue = Math.Min(100, Math.Max(0, (int)((double)amount / target * 100)));
 
-                                // Ganti nilai pada kolom "Progress" dengan string "|" yang merepresentasikan nilai progress
-                                row.Cells["progressColumn"].Value = new string('|', progressValue);
-                            }
+                                string progressTxt = progressValue + "%";
+
+                                row.Cells["progressColumn"].Value = progressTxt;
+                            }*/
                         }
                     }
                 }
